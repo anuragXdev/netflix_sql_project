@@ -57,8 +57,8 @@ GROUP BY 1;
 
 ```sql
  SELECT type , ranking from 
- (SELECT type , rating , count(*), 
- RANK() OVER (PARTITION BY type ORDER BY  count(*) desc) as ranking
+ (SELECT type , rating , COUNT(*), 
+ RANK() OVER (PARTITION BY type ORDER BY  COUNT(*) desc) as ranking
  FROM netflix
  GEOUP BY 1,2 order by 1,3 desc) as t1
 WHERE ranking = 1
