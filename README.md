@@ -56,12 +56,12 @@ GROUP BY 1;
 ### 2. Find the Most Common Rating for Movies and TV Shows
 
 ```sql
- select type , ranking from 
- (select type , rating , count(*), 
- rank() over (partition by type order by count(*) desc) as ranking
- from netflix
- group by 1,2 order by 1,3 desc) as t1
-where ranking = 1
+ SELECT type , ranking from 
+ (SELECT type , rating , count(*), 
+ RANK() OVER (PARTITION BY type ORDER BY  count(*) desc) as ranking
+ FROM netflix
+ GEOUP BY 1,2 order by 1,3 desc) as t1
+WHERE ranking = 1
  
 ```
 
