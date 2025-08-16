@@ -129,6 +129,10 @@ FROM (
     FROM netflix
 ) AS t
 WHERE director_name = 'Rajiv Chilaka';
+
+METHOD:2 
+
+ SELECT * FROM netflix WHERE director LIKE '%Rajiv Chilaka%'
 ```
 
 **Objective:** List all content directed by 'Rajiv Chilaka'.
